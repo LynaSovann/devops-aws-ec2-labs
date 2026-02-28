@@ -14,13 +14,11 @@ This lab walks through:
 
 ---
 
----
-
 ## What is Amazon EC2?
 
 Amazon Elastic Compute Cloud (EC2) is a cloud service that provides resizable virtual servers (instances) in the cloud. It allows you to run applications without managingg physical hardware.
 
---
+---
 
 ## Create a key pair
 
@@ -66,11 +64,43 @@ ssh -i my-key.pem ubuntu@<public-ip>
 
 ## Security Group
 
-..
-....
-...
+### What is a Security Group?
 
-## Create an instance
+A **Security Group** acts as a virtual firewall for your EC2 instance.
+It controls:
+
+- Inbound traffic (incoming)
+- Outbound traffic (outgoing)
+
+### Create a Security Group
+
+1. Go to **EC2 Dashboard**
+2. Click on Security Groups
+3. Click Create Security Group
+
+#### Configuration:
+
+Name: ...
+Description: ...
+Inbound Rules:
+
+| Type | Protocol | Port | Source    |
+| ---- | -------- | ---- | --------- |
+| SSH  | TCP      | 22   | My IP     |
+| HTTP | TCP      | 80   | 0.0.0.0/0 |
+
+Outbound: Leave default (Allow All)
+
+<img src="./img/3.png">
+<img src="./img/4.png">
+<img src="./img/5.png">
+
+---
+
+## Create an EC2 Instance
+
+1. Go to **EC2 Dashboard**
+2. Click **Launch Instance**
 
 User data
 
