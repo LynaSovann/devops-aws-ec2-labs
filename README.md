@@ -102,7 +102,20 @@ Outbound: Leave default (Allow All)
 1. Go to **EC2 Dashboard**
 2. Click **Launch Instance**
 
-User data
+#### Step by Step Configuration
+
+1. Name
+2. Choose AMI
+3. Instance Type
+4. Key Pair
+5. Network Settings
+   <img src="./img/6.png">
+   <img src="./img/7.png">
+   <img src="./img/8.png">
+   <img src="./img/9.png">
+
+6. Advanced Details → User Data
+   <img src="./img/10.png">
 
 ```bash
 #!/bin/bash
@@ -114,6 +127,39 @@ git clone https://github.com/LynaSovann/lyna-sovann-portfolio.git
 cp -r lyna-sovann-portfolio/* /var/www/html
 systemctl restart apache2
 ```
+
+<img src="./img/11.png">
+
+#### What is User Data?
+
+**User Data** is a script that runs automatically the first time the EC2 instance boots.
+It is commonly used for:
+
+- Installing packages
+- Configuring services
+- Deploying Applications
+- Automating infrastructure setup
+  This is called **bootstrapping**.
+
+---
+
+## Access the Application
+
+Afte the install status is:
+
+```bash
+Running
+2/2 checks passed
+```
+
+1. Copy the **Public IPv4 address**
+2. Open your browser
+
+```bash
+http://<your-public-ip>
+```
+
+---
 
 ## Result
 
